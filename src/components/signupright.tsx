@@ -8,7 +8,7 @@ import bitbucket from "../assets/bitbucket.svg";
 import github from "../assets/github.svg";
 import sso from "../assets/sso.svg";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // Define the authentication providers data
 const saasAuthProviders = [
     {
