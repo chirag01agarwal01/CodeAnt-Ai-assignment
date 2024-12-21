@@ -8,6 +8,7 @@ import bitbucket from "../assets/bitbucket.svg";
 import github from "../assets/github.svg";
 import sso from "../assets/sso.svg";
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 // Define the authentication providers data
 const saasAuthProviders = [
     {
@@ -48,6 +49,7 @@ export default function Signupright() {
     useEffect(() => {
         setList(saasAuthProviders);
     },[]);
+    const navigate = useNavigate();
     return (
         <div className="flex flex-col items-center justify-center gap-8 bg-[#fafafa] px-8 py-12">
             <Card className="w-full h-full">
@@ -88,7 +90,8 @@ export default function Signupright() {
                             <Button
                                 key={provider.name}
                                 variant="outline"
-                                className="w-full py-6 flex gap-4 font-semibold">
+                                className="w-full py-6 flex gap-4 font-semibold"
+                                onClick={() => {navigate("/dashboard")}}>
                                 {provider.icon}
                                 {provider.text}
                             </Button>

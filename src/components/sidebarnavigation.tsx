@@ -17,6 +17,7 @@ import {
   Settings,
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const navigationItems = [
   { index: 0, icon: <Home className="w-6 h-6" />, label: "Repositories" },
@@ -33,6 +34,8 @@ const footerItems = [
 
 export default function SidebarNavigation() {
   const [activeItem, setActiveItem] = useState(0);
+  const navigate = useNavigate();
+  
 
   return (
     <div className="flex w-full h-full bg-white border-r border-[#e9e9eb]">
@@ -91,7 +94,7 @@ export default function SidebarNavigation() {
             <div className="w-full grid grid-rows-2 space-y-1">
               {footerItems.map((item) => (
                 <div key={item.label} className="w-full">
-                  <Button variant="ghost" className="w-full">
+                  <Button variant="ghost" className="w-full" onClick={() => navigate("/signup")}>
                     {item.icon}
                     <span className="w-full text-left font-semibold text-[#414651]">
                       {item.label}
