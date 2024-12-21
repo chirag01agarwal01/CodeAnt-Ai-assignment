@@ -25,7 +25,7 @@ const navigationItems = [
 
 const TopBarWithMenu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeItem, setActiveItem] = useState(0);
+
 
 
     return (
@@ -78,7 +78,7 @@ const TopBarWithMenu = () => {
                                         variant="ghost"
                                         className={`w-full ${"text-[#414651]"
                                             }`}
-                                        onClick={() => setActiveItem(item.index)}
+                                        
                                     >
                                         {item.icon}
                                         <span className="w-full text-left font-semibold">
